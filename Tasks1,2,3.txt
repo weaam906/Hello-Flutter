@@ -1,0 +1,52 @@
+import 'dart:math';
+
+void main() 
+{
+  // 1-Task(1)
+  List findEvenNumbers (int startingNumber, int LastNumber)
+  {
+   int i;
+   var evenNumList = [];
+    
+    for (i = startingNumber; i<=LastNumber;i++)
+    {if(i.isEven) {evenNumList.add(i);}}
+    return evenNumList;
+  } 
+  
+  var evens = findEvenNumbers(0,50);
+  print(evens);
+ 
+  //2-Task(2)
+  bool findOddNumber (){
+  var i;
+  var oddList = [];
+  var rng = new Random();
+  var l = new List.generate(10, (_) => rng.nextInt(100));
+    for(i=0;i<l.length;i++)
+    {
+        if(l[i].isOdd) {oddList.add(l[i]);}
+    }
+    if (oddList.isNotEmpty) {print("Odd is Found"); return true;}
+    else {return false;}
+  }
+  
+  var oddFound = findOddNumber();
+  print(oddFound);
+  
+  //3-Task(3)
+  var str = 'The wern Earns his living. Noiselessly';
+  String newStr; 
+  List<String> result = new List();
+  str.split('').forEach((ch) => 
+    {
+    if(ch[0].toUpperCase() == ch[0])
+      {
+      if(newStr != null){result.add(newStr)},
+      newStr = ch
+      }
+     else{newStr += '' + ch}
+    });
+  result.add(newStr);
+  [result[0], result[1].toUpperCase(), result[2].toLowerCase()].forEach
+  (print);
+}
